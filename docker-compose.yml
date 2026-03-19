@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  my-app:
+    # Tự động Build từ Dockerfile nằm cùng thư mục (dấu chấm)
+    build: .
+    
+    # Hoặc nếu bạn muốn nó tự động kéo ảnh mà bạn vất vả nãy giờ tải lên mạng về, 
+    # thì bạn xóa dòng build ở trên đi và bỏ dấu # ở dòng dưới:
+    # image: thaianhnhat2216/my-java-app:latest
+    
+    # Đặt tên cố định cho Container cho dễ quản lý
+    container_name: web-spring-boot
+    
+    # Mở cổng kết nối (Cổng ngoài máy thật : Cổng trong Container)
+    ports:
+      - "8080:8080"
+      
+    # Tính năng rất hay: Tự động chạy lại Container nếu nó bị lỗi hoặc khi bạn bật lại máy tính
+    restart: always

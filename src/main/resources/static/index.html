@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu bản thân - Thai Anh Nhat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e1e2f 0%, #2a2a4a 100%);
+            color: #ffffff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(100, 100, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        .container:hover::before {
+            opacity: 1;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            font-weight: 800;
+        }
+
+        h1 {
+            margin: 0 0 0.5rem;
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            margin: 0 0 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #a0aec0;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #cbd5e0;
+            margin-bottom: 2rem;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-tag:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+            color: #4facfe;
+            border-color: rgba(79, 172, 254, 0.5);
+        }
+
+        .docker-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background: rgba(36, 150, 237, 0.15);
+            border: 1px solid rgba(36, 150, 237, 0.4);
+            border-radius: 12px;
+            color: #2496ed;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(36, 150, 237, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(36, 150, 237, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(36, 150, 237, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="avatar">👨‍💻</div>
+        <h1>Chào bạn! Mình là Thái Anh Nhật</h1>
+        <h2>Sinh viên CNTT - Hutech🚀</h2>
+        <p>
+            Chào mừng bạn đến với trang giới thiệu bản thân của mình!
+            Đây là bài tập ứng dụng web sử dụng Spring Boot được đóng gói và chạy thành công trên nền tảng Docker.
+        </p>
+
+        <div class="skills">
+            <div class="skill-tag">Java</div>
+            <div class="skill-tag">Spring Boot</div>
+            <div class="skill-tag">Docker</div>
+            <div class="skill-tag">HTML/CSS</div>
+        </div>
+
+        <div class="docker-badge">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path
+                    d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.185m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185h-2.119a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.185m2.93 2.715h2.118a.187.187 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.187.187 0 00.184-.185V9.006a.186.186 0 00-.185-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.186.186 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.119a.186.186 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.928 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.119a.186.186 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.185.185v1.888c0 .102.083.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.534-3.239-2.534-.081 0-.164.002-.249.005a.186.186 0 00-.142.106l-.286.685a.186.186 0 00.088.232c.163.078.336.136.514.17 1.258.238 2.053 1.08 2.091 2.376.002.071-.044.135-.11.157-1.554.512-3.136 1-4.747 1.458-1.611.457-3.234.821-4.881 1.054a.186.186 0 01-.132-.022c-.676-.412-1.442-.647-2.227-.68a26.47 26.47 0 00-1.077-.021c-1.353 0-2.673.181-3.935.539a.184.184 0 00-.13.167c-.12 1.456.287 4.191 2.923 5.432 1.42.668 3.518.91 5.9.91h.239c4.35 0 7.82-1.127 9.84-2.834 1.405-1.18 2.146-2.585 2.146-2.585a.186.186 0 00-.071-.242" />
+            </svg>
+            Running on Docker
+        </div>
+    </div>
+</body>
+
+</html>
